@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import entity.Customer;
 
 @Repository
-public class CustomerDaoImplementation implements CustomerDAO {
+public class CustomerDaoImplementation implements CustomerDAOinterface {
 	//need to inject the session factory 
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -28,7 +28,7 @@ public class CustomerDaoImplementation implements CustomerDAO {
 		//execute querry and get result list
 		List<Customer> customers = theQuery.getResultList();
 		//return the result 
-		return null;
+		return customers;
 	}
 
 }

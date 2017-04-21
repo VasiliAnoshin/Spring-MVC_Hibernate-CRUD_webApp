@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 
 import entity.Customer;
 
-public interface CustomerDAO {
+public interface CustomerDAOinterface {
 	public List<Customer> getCustomers();
 }

@@ -16,6 +16,9 @@ public class Customer {
 	@Column(name = "id")
 	private int id;
 	
+	@Column(name = "email")
+	private String email;
+	
 	@Column(name = "first_name")
 	private String firstName;
 	
@@ -54,8 +57,7 @@ public class Customer {
 		this.email = email;
 	}
 
-	@Column(name = "email")
-	private String email;
+	
 	
 	@Override
 	public String toString() {

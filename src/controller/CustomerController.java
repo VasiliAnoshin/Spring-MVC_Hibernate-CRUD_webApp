@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import DAO.CustomerDAO;
+import DAO.CustomerDAOinterface;
 import entity.Customer;
 
 @Controller
@@ -17,7 +17,7 @@ public class CustomerController {
 	//need to inject the DAO into Controller
 	//Spring will scan for a component that implements DAO interface 
 	@Autowired
-	private CustomerDAO customerDAO;
+	private CustomerDAOinterface customerDAO; 
 	
 	@RequestMapping("/list")
 	public String listcustomers(Model theModel){		
