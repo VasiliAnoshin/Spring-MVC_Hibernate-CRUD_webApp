@@ -5,13 +5,10 @@
 
 <head>
 
-	<title> ListCustomers</title>
- 	<!-- href="${pageContext.request.contextPath}/resources/css/style.css" /> 
- 	
+	<title> ListCustomers</title>	
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="../css/style.css" />	   
-		  -->
+		  href="${pageContext.request.contextPath}/resources/css/style.css" />	   		
 </head>
 
 <body>
@@ -21,10 +18,12 @@
 	</div>
 	<div id ="controler">
 	<div id ="content">
+
 	<input type ="button" value = "Add Customer"
 			onclick ="window.location.href ='showFormForAdd'; return false;"
 			class ="add-button"
-	/>
+	/> 
+
 		<table>
 		<tr>
 			<th> First Name</th>

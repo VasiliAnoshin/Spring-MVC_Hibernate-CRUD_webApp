@@ -23,11 +23,22 @@ public class CustomerDaoImplementation implements CustomerDAOinterface {
 		//get the current hibernate session
 		Session curSession = sessionFactory.getCurrentSession();
 		//create a querry 
-		Query<Customer>  theQuery = curSession.createQuery("from Customer" , Customer.class);
+		Query<Customer>  theQuery = 
+				curSession.createQuery("from Customer order by lastName" , Customer.class);
 		//execute querry and get result list
 		List<Customer> customers = theQuery.getResultList();
 		//return the result 
 		return customers;
+	}
+
+	@Override
+	public void saveCustomer(Customer theCustomer) {
+		//get the current hibernate session
+		Session curSession = sessionFactory.getCurrentSession();
+		
+		//create a querry 
+		curSession.save(theCustomer);
+		
 	}
 
 }
