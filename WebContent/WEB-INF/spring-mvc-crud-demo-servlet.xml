@@ -65,6 +65,7 @@
 	<!-- Add support for reading web resources :css , imajes , js -->
 	<mvc:resources location ="/resources/" mapping = "/resources/**">
 	</mvc:resources>
+	
 </beans>
 
 
