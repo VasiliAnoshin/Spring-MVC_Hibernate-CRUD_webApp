@@ -45,4 +45,15 @@ public class CustomerDaoImplementation implements CustomerDAOinterface {
 		return theCustomer;
 	}
 
+	@Override
+	public void deleteCustomer(int theId) {
+		// get the current hibernate session
+		Session curSession = sessionFactory.getCurrentSession();
+		//Delete object with primary key
+		Query theQuery = 
+				curSession.createQuery("delete from Customer where id =:customerId");
+		theQuery.setParameter("customerId", theId);
+		theQuery.executeUpdate();
+	}
+
 }
