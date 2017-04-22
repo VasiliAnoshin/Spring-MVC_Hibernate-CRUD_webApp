@@ -30,7 +30,7 @@
 	    <!-- action: SEND TO SPRING MVC MAPPING modelAttribute: bind data 
 	    	to the customer that declared in MODEL layer--> 
 		<form:form action="saveCustomer" modelAttribute="customer" method="POST">
-		
+			<form:hidden path ="id"/>
 			<table>
 				<tbody>
 					<tr>

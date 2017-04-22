@@ -1,9 +1,6 @@
 package DAO;
 
 import java.util.List;
-
-import javax.transaction.Transactional;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -34,11 +31,18 @@ public class CustomerDaoImplementation implements CustomerDAOinterface {
 	@Override
 	public void saveCustomer(Customer theCustomer) {
 		//get the current hibernate session
-		Session curSession = sessionFactory.getCurrentSession();
-		
+		Session curSession = sessionFactory.getCurrentSession();		
 		//create a querry 
-		curSession.save(theCustomer);
-		
+		curSession.saveOrUpdate(theCustomer);		
+	}
+
+	@Override
+	public Customer getCustomer(int theId) {
+		// get the current hibernate session
+		Session curSession = sessionFactory.getCurrentSession();
+		//now retrieve/read from db using the primary key
+		Customer theCustomer = curSession.get(Customer.class, theId);		
+		return theCustomer;
 	}
 
 }
